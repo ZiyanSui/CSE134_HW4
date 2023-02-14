@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon_io/favicon-32x32.png"
+    />
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(0, 0, 80, 80);
+    </script>
+    <style>
+      border {
+        background-color: aquamarine;
+      }
+    </style>
+
+    <title>Ziyan Sui Personal Website</title>
+  </head>
+
+  <body>
+    <header>
+      <h3><i>ZiyanSui</i></h3>
+    </header>
+
+    <nav>
+      <a href="https://github.com/ZiyanSui"
+        ><img src="./images/icon-github.svg" alt="Github Icon"
+      /></a>
+    </nav>
+
+    <aside>
+      <h1><b>Nice to meet you!</b> <br />I'm Ziyan Sui.</h1>
+      <picture>
+        <source
+          media="(min-width:650px)"
+          srcset="./images/istockphoto-1165150697-612x612.webp"
+        />
+        <img
+          src="./images/istockphoto-1165150697-612x612.webp"
+          alt="Person"
+          style="width: auto"
+        />
+      </picture>
+    </aside>
+
+    <main>
+      <div>
+        Based in the US, I'm a <code>full stack developer</code> passionate
+        about building
+        <pre>accessible</pre>
+        web apps that users love and perfectly satisfy their needs.
+      </div>
+      <section>
+        <h2><em>About Me</em></h2>
+        <p>
+          I am currently a college student living in San Diego, and is going to
+          graduate next year. However, as a computer science student, he finds
+          it hard to find a great job under the laid-off trend in recent years.
+          Thus, he is looking to build a personal portfolio website to share
+          with recruiters and wishes to have a higher probability of hiring.
+        </p>
+
+        He's excited to bring a user-focused perspective to the engineering
+        department but nervous because he never has had any real industry
+        experience. Outside of school, he's a sports fan, especially basketball
+        and soccer. He enjoys learning new technology and will sometimes go to
+        conferences if they're nearby.
+      </section>
+
+      <hr />
+
+      <ul>
+        <li>Skill</li>
+      </ul>
+
+      <ol>
+        <li>HTML</li>
+        <li>JavaScript</li>
+        <li>React</li>
+      </ol>
+
+      <table>
+        <caption>
+          Additional Skills
+        </caption>
+        <colgroup>
+          <col />
+        </colgroup>
+        <tr>
+          <th>Skill</th>
+        </tr>
+        <tr>
+          <td>SQL</td>
+        </tr>
+      </table>
+
+      <section>
+        <h2>Projects</h2>
+        <figure>
+          <img src="./images/thumbnail-project-1-large.webp" alt="Project-1" />
+          <figcaption>Project-1</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Contact Me</h2>
+        <label for="contact">Contact me or not:</label>
+        <select name="1" id="contact">
+          <optgroup label="Choice">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+          </optgroup>
+        </select>
+
+        <form action="hello">
+          <label for="name">Name:</label>
+          <input type="text" id="name" />
+          <label for="email">email:</label>
+          <input type="text" id="email" />
+          <label for="messages">Messages:</label>
+          <textarea name="message" id="messages" cols="30" rows="10"></textarea>
+          <fieldset>
+            <legend>Favirote Programming Language</legend>
+            <input list="favorite-language" />
+            <datalist id="favorite-language">
+              <option value="1">Python</option>
+              <option value="2">Java</option>
+              <option value="3">C++</option>
+            </datalist>
+          </fieldset>
+        </form>
+        <button>Send Messages</button>
+      </section>
+    </main>
+
+    <section>
+      <details>
+        <summary>
+          <h1>experiment</h1>
+        </summary>
+        <iframe
+          src="https://www.linkedin.com/in/ziyan-sui-4989961b7/"
+          title="LinkedIn"
+        ></iframe>
+        <audio controls>
+          <source
+            src="./medias/epic-sport-clap-ampampamp-loop-main-9900.mp3"
+            type="audio/ogg"
+          />
+        </audio>
+        <video width="320" height="240" controls>
+          <source
+            src="./medias/file_example_MP4_480_1_5MG.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <svg width="100" height="50">
+          <rect
+            width="100"
+            height="50"
+            style="fill: rgb(0, 0, 255); stroke-width: 10; stroke: rgb(0, 0, 0)"
+          />
+        </svg>
+        <template>
+          <p>Hello World</p>
+        </template>
+      </details>
+    </section>
+
+    <footer>
+      <span>
+        <strong>ZiyanSui</strong>
+      </span>
+    </footer>
+  </body>
+</html>
