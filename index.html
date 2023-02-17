@@ -6,179 +6,176 @@
 
     <link
       rel="icon"
-      type="image/png"
+      type="image/webp"
       sizes="32x32"
-      href="./images/favicon_io/favicon-32x32.png"
+      href="images/favicon-32x32.webp"
     />
-    <script>
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#FF0000";
-      ctx.fillRect(0, 0, 80, 80);
-    </script>
-    <style>
-      border {
-        background-color: aquamarine;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 
     <title>Ziyan Sui Personal Website</title>
   </head>
 
   <body>
     <header>
-      <h3><i>ZiyanSui</i></h3>
+      <section class="col_left">
+        <nav>
+          <a href="#aboutme">About Me</a>
+          <a href="#projects">Projects</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <h1>
+          Nice to meet U! <br />
+          I'm Ziyan Sui.
+        </h1>
+        <p>
+          Based in the US, I'm a college student pursuing to be a full stack
+          developer and passionate about building accessible web apps that users
+          love and perfectly satisfy their needs.
+        </p>
+      </section>
+      <section class="col_right">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="/images/person.webp" />
+          <img
+            id="person"
+            src="images/person_small.webp"
+            alt="Ziyan Sui Picture"
+          />
+        </picture>
+      </section>
     </header>
 
-    <nav>
-      <a href="https://github.com/ZiyanSui"
-        ><img src="./images/icon-github.svg" alt="Github Icon"
-      /></a>
-    </nav>
-
-    <aside>
-      <h1><b>Nice to meet you!</b> <br />I'm Ziyan Sui.</h1>
-      <picture>
-        <source
-          media="(min-width:650px)"
-          srcset="./images/istockphoto-1165150697-612x612.webp"
-        />
-        <img
-          src="./images/istockphoto-1165150697-612x612.webp"
-          alt="Person"
-          style="width: auto"
-        />
-      </picture>
-    </aside>
-
     <main>
-      <div>
-        Based in the US, I'm a <code>full stack developer</code> passionate
-        about building
-        <pre>accessible</pre>
-        web apps that users love and perfectly satisfy their needs.
-      </div>
       <section>
-        <h2><em>About Me</em></h2>
+        <h2 id="aboutme">About Me</h2>
         <p>
-          I am currently a college student living in San Diego, and is going to
-          graduate next year. However, as a computer science student, he finds
-          it hard to find a great job under the laid-off trend in recent years.
-          Thus, he is looking to build a personal portfolio website to share
-          with recruiters and wishes to have a higher probability of hiring.
+          I'm an undergraduate student at the University of California, San
+          Diego (UCSD), where I'm majoring in computer science. My passion for
+          computer science has led me to explore various fields, including
+          graphics, machine learning, and network, and I've taken many classes
+          to broaden my knowledge. Lately, I've become particularly interested
+          in web development and find it to be my favorite field.
         </p>
+        <p>
+          Beyond my studies, I'm an avid sports fan, with basketball being a
+          particular favorite of mine. I'm a big fan of the Golden State
+          Warriors, among other NBA teams. In my free time, I also enjoy
+          watching movies and playing video games. I have an eclectic taste in
+          music and enjoy listening to various genres, although I've recently
+          developed a keen interest in Korean Hip-hop. Additionally, I enjoy
+          traveling to new places and experiencing different cultures and trying
+          out new cuisines.
+        </p>
+      </section>
 
-        He's excited to bring a user-focused perspective to the engineering
-        department but nervous because he never has had any real industry
-        experience. Outside of school, he's a sports fan, especially basketball
-        and soccer. He enjoys learning new technology and will sometimes go to
-        conferences if they're nearby.
+      <section>
+        <h2 id="projects">Projects</h2>
+        <picture>
+          <p>Recipe Search Website</p>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/images/RecipeWebsite.webp"
+          />
+          <img
+            src="/images/RecipeWebsite_small.webp"
+            alt="Recipe Search Website"
+            class="projects"
+          />
+        </picture>
+        <hr />
+        <picture>
+          <p>Event Organizing Website</p>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/images/LookForEvent.webp"
+          />
+          <img
+            src="/images/LookForEvent_small.webp"
+            alt="Event Organize Website"
+            class="projects"
+          />
+        </picture>
+      </section>
+
+      <section>
+        <h2 id="experiences">Experiences</h2>
+        <ul>
+          <li>
+            CSE 167 Computer Graphics Tutor
+            <ul>
+              <li>
+                Help professor to grade written assignments and programming
+                assignments for 150 students.
+              </li>
+              <li>
+                Hold office hours an hour per week to help students with their
+                assignments.
+              </li>
+              <li>
+                Realize how to better communicate with students and
+                responsibilities to be a tutor.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            Academic Integrity Tutor
+            <ul>
+              <li>
+                Advise and coach students in groups and 1:1 on AI training
+                content and in general advising and pre-requisite appointments.
+              </li>
+              <li>
+                Evaluating mentee achievement of the learning objectives,
+                keeping notes on mentees' progress, providing mentees feedback
+                on their performance.
+              </li>
+              <li>
+                Communicating with the mentees both in and outside of their
+                scheduled mentoring sessions, and keeping the AIO Assistant
+                Director apprised of any concerns with mentees.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="contact">
+        <h2 id="contact">Contact</h2>
+        <section class="contact_left">
+          <p>
+            Interested in doing a project together? <br />
+            Fill the form and I will respond to you as soon as possible.
+          </p>
+          <ul>
+            Ziyan Sui
+            <li>Phone: 858-568-0745</li>
+            <li>Email: zsui@ucsd.edu</li>
+          </ul>
+        </section>
+        <section class="contact_right">
+          <form action="hello">
+            <label for="name">Name:</label>
+            <input type="text" id="name" />
+            <label for="email">email:</label>
+            <input type="text" id="email" />
+            <label for="messages">Messages:</label>
+            <textarea
+              name="message"
+              id="messages"
+              cols="30"
+              rows="8"
+            ></textarea>
+          </form>
+          <button>Send Messages</button>
+        </section>
       </section>
 
       <hr />
-
-      <ul>
-        <li>Skill</li>
-      </ul>
-
-      <ol>
-        <li>HTML</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ol>
-
-      <table>
-        <caption>
-          Additional Skills
-        </caption>
-        <colgroup>
-          <col />
-        </colgroup>
-        <tr>
-          <th>Skill</th>
-        </tr>
-        <tr>
-          <td>SQL</td>
-        </tr>
-      </table>
-
-      <section>
-        <h2>Projects</h2>
-        <figure>
-          <img src="./images/thumbnail-project-1-large.webp" alt="Project-1" />
-          <figcaption>Project-1</figcaption>
-        </figure>
-      </section>
-
-      <section>
-        <h2>Contact Me</h2>
-        <label for="contact">Contact me or not:</label>
-        <select name="1" id="contact">
-          <optgroup label="Choice">
-            <option value="1">Yes</option>
-            <option value="2">No</option>
-          </optgroup>
-        </select>
-
-        <form action="hello">
-          <label for="name">Name:</label>
-          <input type="text" id="name" />
-          <label for="email">email:</label>
-          <input type="text" id="email" />
-          <label for="messages">Messages:</label>
-          <textarea name="message" id="messages" cols="30" rows="10"></textarea>
-          <fieldset>
-            <legend>Favirote Programming Language</legend>
-            <input list="favorite-language" />
-            <datalist id="favorite-language">
-              <option value="1">Python</option>
-              <option value="2">Java</option>
-              <option value="3">C++</option>
-            </datalist>
-          </fieldset>
-        </form>
-        <button>Send Messages</button>
-      </section>
     </main>
 
-    <section>
-      <details>
-        <summary>
-          <h1>experiment</h1>
-        </summary>
-        <iframe
-          src="https://www.linkedin.com/in/ziyan-sui-4989961b7/"
-          title="LinkedIn"
-        ></iframe>
-        <audio controls>
-          <source
-            src="./medias/epic-sport-clap-ampampamp-loop-main-9900.mp3"
-            type="audio/ogg"
-          />
-        </audio>
-        <video width="320" height="240" controls>
-          <source
-            src="./medias/file_example_MP4_480_1_5MG.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <svg width="100" height="50">
-          <rect
-            width="100"
-            height="50"
-            style="fill: rgb(0, 0, 255); stroke-width: 10; stroke: rgb(0, 0, 0)"
-          />
-        </svg>
-        <template>
-          <p>Hello World</p>
-        </template>
-      </details>
-    </section>
-
-    <footer>
-      <span>
-        <strong>ZiyanSui</strong>
-      </span>
-    </footer>
+    <footer></footer>
   </body>
 </html>
