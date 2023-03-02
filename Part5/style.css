@@ -13,12 +13,20 @@
 
 @font-face {
   font-family: "Space Grotesk Bold";
-  src: url("/Space_Grotesk/static/SpaceGrotesk-Bold.ttf") format("truetype");
+  src: url("./Space_Grotesk/static/SpaceGrotesk-Bold.ttf") format("truetype");
   font-style: normal;
 }
 
 * {
   font-family: "Space Grotesk Bold", sans-serif;
+  color: rgb(217, 217, 217);
+}
+
+input::placeholder {
+  color: rgb(217, 217, 217);
+}
+
+textarea::placeholder {
   color: rgb(217, 217, 217);
 }
 

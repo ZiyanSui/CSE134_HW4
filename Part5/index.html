@@ -8,7 +8,7 @@
       rel="icon"
       type="image/webp"
       sizes="32x32"
-      href="images/favicon-32x32.webp"
+      href="./images/favicon-32x32.webp"
     />
     <link rel="stylesheet" href="style.css" />
 
@@ -37,10 +37,10 @@
       </section>
       <section class="col_right">
         <picture>
-          <source media="(min-width: 768px)" srcset="/images/person.webp" />
+          <source media="(min-width: 768px)" srcset="./images/person.webp" />
           <img
             id="person"
-            src="images/person_small.webp"
+            src="./images/person_small.webp"
             alt="Ziyan Sui Picture"
           />
         </picture>
@@ -76,10 +76,10 @@
         <picture>
           <source
             media="(min-width: 768px)"
-            srcset="/images/RecipeWebsite.webp"
+            srcset="./images/RecipeWebsite.webp"
           />
           <img
-            src="/images/RecipeWebsite_small.webp"
+            src="./images/RecipeWebsite_small.webp"
             alt="Recipe Search Website"
             class="projects"
           />
@@ -89,10 +89,10 @@
         <picture>
           <source
             media="(min-width: 768px)"
-            srcset="/images/LookForEvent.webp"
+            srcset="./images/LookForEvent.webp"
           />
           <img
-            src="/images/LookForEvent_small.webp"
+            src="./images/LookForEvent_small.webp"
             alt="Event Organize Website"
             class="projects"
           />
@@ -152,25 +152,28 @@
 
           <p>Ziyan Sui</p>
           <ul>
-            <li>Phone: 858-568-0745</li>
-            <li>Email: zsui@ucsd.edu</li>
+            <li id="phone">Phone: 858-568-0745</li>
+            <li id="myemail">Email: zsui@ucsd.edu</li>
           </ul>
         </section>
         <section class="contact_right">
           <form action="hello">
             <label for="name">Name:</label>
-            <input type="text" id="name" />
+            <input type="text" id="name" placeholder="Enter your name" />
             <label for="email">email:</label>
-            <input type="text" id="email" />
+            <input type="text" id="email" placeholder="Enter your email" />
             <label for="messages">Messages:</label>
             <textarea
               name="message"
               id="messages"
+              placeholder="Enter your message"
               cols="30"
               rows="8"
             ></textarea>
           </form>
-          <button>Send Messages</button>
+          <button id="sendButton">Send Messages</button>
+          <br />
+          <output id="output"></output>
         </section>
       </section>
 
@@ -178,5 +181,41 @@
     </main>
 
     <footer></footer>
+
+    <script>
+      const sendButton = document.querySelector("#sendButton");
+      let output = document.querySelector("#output");
+      sendButton.addEventListener("click", () => {
+        const confirm = window.confirm("Are you sure you want to send?");
+        if (confirm) {
+          output.innerText = `Confirm result: ${confirm}`;
+        }
+      });
+
+      const phoneListItem = document.getElementById("phone");
+      const emailListItem = document.getElementById("myemail");
+
+      phoneListItem.addEventListener("click", () => {
+        const confirmed = confirm(
+          "Do you want to make a call to 858-568-0745?"
+        );
+        if (confirmed) {
+          const phoneNumber = "8585680745";
+          window.open(`tel:${phoneNumber}`);
+        }
+      });
+
+      emailListItem.addEventListener("click", () => {
+        const confirmed = confirm(
+          "Do you want to send an email to zsui@ucsd.edu?"
+        );
+        if (confirmed) {
+          const recipient = "zsui@ucsd.edu";
+          const subject = "Example Subject";
+          const body = "Example Body";
+          window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+        }
+      });
+    </script>
   </body>
 </html>
