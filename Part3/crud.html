@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Blog Posts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js"></script>
+  </head>
+  <body>
+    <!-- Initial html elements on an empty posts page -->
+    <h1>Big List of Blog Posts</h1>
+    <p id="emptyList">No blog posts currently listed</p>
+    <ul id="list"></ul>
+    <button id="addButton">Add Post</button>
+
+    <!-- Added form pop up only when click add post button -->
+    <dialog id="dialog" display="none">
+      <form id="form">
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title" />
+        <br />
+        <label for="date">Date: </label>
+        <input type="date" id="date" name="date" />
+        <br />
+        <label for="summary">Summary: </label>
+        <textarea name="summary" id="summary"></textarea>
+        <br />
+        <button id="cancel">Cancel</button>
+        <button id="save">Save</button>
+      </form>
+    </dialog>
+
+    <script type="module">
+      import { addPost, removePost, update } from "./blog.js";
+
+      // Local Storage
+      let posts = [];
+
+      if (localStorage.getItem("posts")) {
+        posts = JSON.parse(localStorage.getItem("posts"));
+      }
+
+      const dialog = document.getElementById("dialog");
+      const form = document.getElementById("form");
+
+      // Add Button Event Listener
+      const addButton = document.getElementById("addButton");
+      addButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      // Cancel Button Event Listener
+      const cancelButton = document.getElementById("cancel");
+      cancelButton.addEventListener("click", () => {
+        dialog.close();
+        form.reset();
+      });
+
+      // Save Button Event Listener
+      const saveButton = document.getElementById("save");
+      saveButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        let title = document.getElementById("title").value;
+        title = DOMPurify.sanitize(title);
+        let date = document.getElementById("date").value;
+        date = DOMPurify.sanitize(date);
+        let summary = document.getElementById("summary").value;
+        summary = DOMPurify.sanitize(summary);
+
+        const post = { title, date, summary };
+        const postId = form.getAttribute("data-post-id"); // get post id from form data attribute
+        if (postId) {
+          post.id = Number(postId); // convert id to number
+        }
+        addPost(post, posts);
+        dialog.close();
+        form.reset();
+      });
+
+      update(posts);
+    </script>
+  </body>
+</html>

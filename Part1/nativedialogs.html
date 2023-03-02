@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native Dialogs</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js"></script>
+  </head>
+  <body>
+    <h1>Simple Dialogs?</h1>
+    <button id="alertBtn">Alert</button>
+    <button id="confirmBtn">Confirm</button>
+    <button id="promptBtn">Prompt</button>
+    <button id="safer-promptBtn">Safer Prompt</button>
+    <hr />
+    <output id="output"></output>
+
+    <script>
+      let output = document.getElementById("output");
+      // Alert Button Click
+      const alertButton = document.getElementById("alertBtn");
+      alertButton.addEventListener("click", function () {
+        window.alert(`Alert Button Pressed`);
+      });
+
+      // Confirm Button Click
+      const confirmButton = document.getElementById("confirmBtn");
+      confirmButton.addEventListener("click", () => {
+        const result = window.confirm("Do you confirm this?");
+        output.innerText = `Confirm result: ${result}`;
+      });
+
+      // Prompt Button Click
+      const promptButton = document.getElementById("promptBtn");
+      promptButton.addEventListener("click", () => {
+        const input = window.prompt("What is your name?");
+        // Check for empty string
+        if (input) {
+          output.innerHTML = "Prompt result : " + input;
+        } else {
+          output.innerHTML = `Prompt result : User didn't enter anything`;
+        }
+      });
+
+      // Safe Prompt Button Click
+      const saferButton = document.getElementById("safer-promptBtn");
+      saferButton.addEventListener("click", () => {
+        const input = window.prompt("What is your name?");
+        // Check for empty string
+        if (input) {
+          const clean = DOMPurify.sanitize(input);
+          output.innerHTML = `Prompt result : ${clean}`;
+        } else {
+          output.innerHTML = `Prompt result : User didn't enter anything`;
+        }
+      });
+    </script>
+  </body>
+</html>

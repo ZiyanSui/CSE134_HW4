@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Dialog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js"></script>
+  </head>
+  <body>
+    <button id="alertButton">Alert</button>
+    <button id="confirmButton">Confirm</button>
+    <button id="promptButton">Prompt</button>
+    <br />
+    <output id="output"></output>
+
+    <script type="module">
+      import { cusAlert, cusConfirm, cusPrompt } from "./customdialog.js";
+
+      // Alert Button Click
+      const alertButton = document.getElementById("alertButton");
+      alertButton.addEventListener("click", () => {
+        cusAlert(`Alert Button Pressed!`);
+      });
+
+      // Confirm Button Click
+      const confirmButton = document.getElementById("confirmButton");
+      confirmButton.addEventListener("click", async () => {
+        const result = await cusConfirm(`Do you confirm this?`);
+        output.innerText = `Confirm result: ${result}`;
+      });
+
+      const promptButton = document.getElementById("promptButton");
+      promptButton.addEventListener("click", async () => {
+        const result = await cusPrompt("What is your name?");
+        // Check for empty string
+        if (result) {
+          const clean = DOMPurify.sanitize(result);
+          output.innerHTML = `Prompt result : ${clean}`;
+        } else {
+          output.innerHTML = `Prompt result : User didn't enter anything`;
+        }
+      });
+    </script>
+  </body>
+</html>
